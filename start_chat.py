@@ -4,12 +4,13 @@ from add_friend import add_friend
 def start_chat(spy_name,spy_age,spy_rating):
     show_menu = True
     while show_menu:
-        menu_choices = "What do you want to do ? \n 1.Add status update \n 2.Close Application \n 3.Add friends"
+        menu_choices = "What do you want to do ? \n 1.Add status update \n 2.Close Application \n 3.Add friends \n "
         result = raw_input(menu_choices)
         # validating users input
         if result == "1":
             # action
-            current_status_message = add_status(current_status_message)
+            current_status_message = add_status()
+            print"Your Current status is: "+current_status_message
         elif result == "2":
             show_menu = False
         elif result == "3":

@@ -4,7 +4,6 @@ def add_friend():
     friends_rating = []
     friends_is_online = []
 
-
     new_name = raw_input("Please add your friend's name: ")
     new_salutation = raw_input("Are they Mr. or Ms.?: ")
     new_name = new_name + " " + new_salutation

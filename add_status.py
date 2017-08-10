@@ -1,4 +1,4 @@
-def add_status(current_status_message):
+def add_status():
 
     # logic
     STATUS_MESSAGES = ["Spy mode ON", "No message, only call"]

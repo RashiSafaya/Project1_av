@@ -37,14 +37,14 @@ elif existing == "N" or existing == "n":
                     print "Can do much better Spy!"
                 else:
                     print "You need to buckle up Spy!"
+                spy_is_online = True
+                print "Your authentication is now complete! WELCOME %s. Your age is %d. You have a rating of %.2f" % (
+                spy_name, spy_age, spy_rating)
             else:
                 print "Sorry, you are not eligible to be a spy."
 
         else:
             print "No name given. Please try again."
-
-        spy_is_online = True
-        print "Your authentication is now complete! WELCOME %s. Your age is %d. You have a rating of %.2f" %(spy_name, spy_age, spy_rating)
     else:
         print "Enter a valid name"
 
