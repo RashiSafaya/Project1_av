@@ -1,15 +1,15 @@
-from spy_details import spy_name, spy_age, spy_rating, spy_salutation
+from spy_details import spy
 from start_chat import start_chat
 from add_status import add_status
 
 print "Let's get started!!!"
-question = "Do you want to continue as " + spy_salutation + spy_name + "(Y/N) ? "
+question = "Do you want to continue as " + spy.spy_salutation + spy.spy_name + "(Y/N) ? "
 existing = raw_input(question)
 
 # validating users input
 if existing == "Y" or existing == "y":
     # logic here
-    start_chat(spy_name,spy_age,spy_rating)
+    start_chat(spy.spy_name,spy.spy_age,spy.spy_rating)
 
 elif existing == "N" or existing == "n":
     # new user code here
