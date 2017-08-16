@@ -1,7 +1,9 @@
+# default user details
 
 spy = {
-'spy_name' : "Rashi Safaya",
-"spy_salutation" : "Ms.",
-'spy_age': 21,
-'spy_rating': 4.5
+    'name': "Rashi Safaya",
+    'salutation': "Ms.",
+    'age': 21,
+    'rating': 4.5,
+    'is_online': True
 }
