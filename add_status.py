@@ -10,7 +10,6 @@ def add_status():
             updated_status_message = new_status_message
             STATUS_MESSAGES.append(updated_status_message)
         else:
-            # logic
             print "Please enter a valid status "
 
     elif default.upper() == "Y":
@@ -22,7 +21,6 @@ def add_status():
         if len(STATUS_MESSAGES) >= message_selection:
             updated_status_message = STATUS_MESSAGES[message_selection - 1]
         else:
-            # logic
             print "Select a proper status"
 
     else:

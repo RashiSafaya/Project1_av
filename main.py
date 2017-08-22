@@ -18,7 +18,14 @@ elif existing.upper() == "N":
 
     if len(spy['name']) > 0:
         spy['salutation'] = raw_input("What should we call you(Mr. or Ms.): ")
-        spy['age'] = int(raw_input("Please enter your age : "))           # typecasting(converting string to int)
+
+        while True:
+            try:
+                # EXCEPTION HANDLING
+                spy['age'] = int(raw_input("Please enter your age : "))   # typecasting(converting string to int)
+                break
+            except ValueError:
+                print "Please enter your correct age."
 
         spy['name'] = spy['salutation'] + "" + spy['name']  # concatenation of name and salutation
         # assignment operator parsing is from r to l.
