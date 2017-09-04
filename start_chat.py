@@ -53,3 +53,25 @@ def start_chat(name, age, rating, status):
             show_menu = False
         else:
             print "Wrong choice. Please try again."
+
+
+    if existing == "Y":
+        start_chart(spy['name'],spy['age'],spy['rating'])
+
+    else:
+        spy = {
+            'name': '',
+            'salutation': '',
+            'age': 0,
+            'rating': 0.0,
+            'is_online': False
+        }
+
+        spy['name'] = raw_input("Welcome Spy!!! Please tell me your name : ")
+        spy['salutation'] = raw_input("What should I call you Mr./Mrs. : ")
+
+        spy['age'] = int(raw_input("Can you tell me your age : "))
+        spy['rating'] = float(raw_input("Can you tell me your rating : "))
+        spy_is_online = True
+
+        start_chat(spy['name'], spy['age'], spy['rating'])
