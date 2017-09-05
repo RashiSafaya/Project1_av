@@ -10,7 +10,7 @@ def add_status():
             updated_status_message = new_status_message
             status_messages.append(updated_status_message)
         else:
-            print "Please enter a valid status "
+            print "Please enter a valid status. "
 
     elif default.upper() == "Y":
         item_position = 1
