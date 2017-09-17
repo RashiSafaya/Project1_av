@@ -1,9 +1,10 @@
 from steganography.steganography import Steganography
-from select_friend import select_friend
+from selectfriend import select_friend
 import re
 from globals import friends
-from send_message import ChatMessage
-from word_count import word_count
+from sendmessage import ChatMessage
+from wordcount import word_count
+
 
 def read_message():
     # choose friend from the list
@@ -15,7 +16,8 @@ def read_message():
     count = word_count(secret_message)
     new_chat = ChatMessage(secret_message, False, count)
     friends[sender].chats.append(new_chat)
-     # sending message when secret text contatins SOS and Save Me
+    # sending message when secret text contatins SOS and Save Me
+
 
     if emergency(secret_message):
         print "Help is on its way!"
