@@ -1,8 +1,8 @@
 from steganography.steganography import Steganography
-from select_friend import select_friend
+from selectfriend import select_friend
 from datetime import datetime
 from globals import friends
-from word_count import word_count
+from wordcount import word_count
 
 
 # save the messages
@@ -39,5 +39,3 @@ def send_message():
     else:
         print "Enter the secret text!"
 
-    friends[friend_choice]['chats'].append(new_chat)
-    print "You have a secret message"
