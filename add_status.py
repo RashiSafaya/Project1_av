@@ -1,9 +1,11 @@
 from globals import spy
 
+status_messages = ["Spy mode ON", "No message, only call"]
+
+
 def add_status():
     updated_status_message = None
     # logic
-    status_messages = ["Spy mode ON", "No message, only call"]
     default = raw_input("Do you want to select from older status (y/n)? ")
 
     if default.upper() == "N":
@@ -11,6 +13,7 @@ def add_status():
         if len(new_status_message) > 0:
             updated_status_message = new_status_message
         status_messages.append(updated_status_message)
+
 
     elif default.upper() == "Y":
         if spy.current_status_message is not None:
