@@ -1,29 +1,24 @@
 # import statements.
-from globals import friends
+from globals import friends,spy
+from spy_details import spy
 
 # add new friends.
 def add_friend():
-    new_friend = {
-        'name': '',
-        'salutation': '.',
-        'age': 0,
-        'rating': 0.0,
-        'is_online': False,
-        'chats': []
-    }
+    new_friend = spy()
+    print "Enter your friend's details \n"
 
-    new_friend['name'] = raw_input("Please add your friend's name: ")
-    new_friend['salutation'] = raw_input("Are they Mr. or Ms.?: ")
-    # concatenation.
-    new_friend['name'] = new_friend['name'] + " " + new_friend['salutation']
-    new_friend['age'] = int(raw_input("Age?"))
-    new_friend['rating'] = float(raw_input("Spy rating?"))
+    new_friend.name = raw_input("Enter the name of your friend: ")
+    new_friend.salutation = raw_input("Are they Mr. or Ms.? ")
+    new_friend.name = new_friend.name + " " + new_friend.salutation             # concatenation.
+    new_friend.age = int(raw_input("Age?"))
+    new_friend.rating = float(raw_input("Spy rating?"))
 
     # validating input
-    if len(new_friend['name']) > 0 and new_friend['age'] > 12 and new_friend['age'] < 60:
-        # add_friend
-        friends.append(new_friend)
-        print "Friend Added"
+    if len(new_friend.name) > 0 and 12 < new_friend.age < 60:
+        if new_friend.rating >= spy.rating:
+            # add_friend
+            friends.append(new_friend)
+            print "Friend Added"
     else:
         print "Sorry invalid entry. We can not add your friend due to some error. Please check your details again."
 
