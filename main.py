@@ -1,9 +1,11 @@
 # import statements.
-from spy_details import spy
+
+from spydetails import spy
 from globals import spy
-from start_chat import start_chat
+from startchat import start_chat
 import re
 from colorama import init
+
 init()
 
 print "Let's get started!!!"
@@ -18,35 +20,59 @@ if existing.upper() == "Y":
     spy_salutation = spy.getSalutation()
     spy_age = spy.getage()
     spy_rating = spy.getrating()
-    rating = spy_rating
     spy_is_online = spy.getis_online()
-    spy.name = spy.salutation + "." + spy.name
+    spy_name = str(spy_salutation) + "." + str(spy_name)
+    print  "Welcome " + spy_name + "\nhappy to have you "
+    print spy_name + " is of %d years and has a rating of %f" % (spy_age, spy_rating)
+    start_chat()
 
-    start_chat(spy.name, spy.age, spy.rating, spy.is_online)
+
+
 
 elif existing.upper() == "N":
     # new user code here
-    spy.name = raw_input("What is your name SPY: ")       # defining variable.
+    name = raw_input("What is your name SPY: ")  # defining variable.
     pattern = '^[a-zA-Z\s]+$'
-    if re.match(pattern, spy.name is not None):
-        if len(spy.name) > 0 and spy.name.isalpha() is True:
-            spy.salutation = raw_input("What should we call you(Mr. or Ms.): ")
+    if re.match(pattern,str(name)) != None:
+        if len(name) > 0 and name.isalpha():
+            salutation =raw_input("What is your salutation(Mr/Ms) SPY:")
+            name=salutation+" "+name
+            if len(salutation) > 0 and salutation.isalpha() is True:
+                age = int(raw_input("What is your age SPY: "))
+                pattern = '^[0-9]+$'
+                if re.match(pattern, str(age)) != None and (12 < age < 50):
+                    rating = float(raw_input("What is your rating SPY: "))
+                    pattern = '^[0-9]+\.[0-9]+$'
+                    if re.match(pattern, str(rating)) is not None:
+                        if rating > 4.7:
+                            print "Great Work Spy!"
+                        elif 3.5 < rating <= 4.7:
+                            print "You are doing amazing Spy!"
+                        elif 2 <rating <= 3.5:
+                            print "Can do much better Spy!"
+                        else:
+                            print "You need to buckle up Spy!"
+                        spy_is_online = True
+                        spy.setSpy(name,salutation,age,rating,spy_is_online)
+                        welcome_message = "Authentication complete. Welcome\n " \
+                                          "Name : " + name + "\n" \
+                                                                 "Age: " + str(age) + "\n" \
+                                                                                          "Rating: " + str(
+                            rating) + "\n" \
+                                          "You are awesome \n "
+                        print welcome_message
+                        start_chat()
 
-        while True:
-            try:
-                # EXCEPTION HANDLING
-                spy_age = int(raw_input("Please enter your age : "))   # typecasting(converting string to int)
-                break
-            except ValueError:
-                print "Please enter your correct age."
-
-        spy.name = spy.salutation + "" + spy.name  # concatenation of name and salutation
-        # assignment operator parsing is from r to l.
-
-        # starting chat application
-        start_chat(spy.name, spy.age, spy.rating, spy.is_online)
-
+                    else:
+                        print "Enter correct rating"
+                else:
+                    print "Enter correct age"
+            else:
+                print "Enter correct salutation"
+        else:
+            print "Enter correct name"
     else:
-        print "Invalid name. Please try again."
+        print "Enter correct name"
+
 else:
-    print "Wrong choice. Try again"
+    print "WRONG VALUE"
